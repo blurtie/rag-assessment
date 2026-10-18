@@ -1,0 +1,25 @@
+# Evaluation set — WRITE THESE YOURSELF by reading the papers (this is your evidence of ownership).
+# Target: ~25 questions. Mix of types:
+#   single   - answer is in one place in one paper (~12)
+#   detail   - a specific number/name from a table or appendix; hard to answer from memory (~5)
+#   cross    - needs 2 papers (~4)
+#   none     - NOT answerable from the collection; system should say so (~3)
+#   id       - asked in Indonesian, answer is in an English paper (~3; can overlap with the above)
+#
+# gold: every (doc, page) where the answer evidence appears. Used to score retrieval:
+#   a retrieved chunk is a "hit" if same doc AND its pages include a gold page.
+# answer: short reference answer in your own words, for judging generation.
+
+questions:
+  - id: q01
+    type: single
+    question: "What benchmark does the Eyes Wide Shut paper introduce to test visual shortcomings of multimodal LLMs?"
+    gold:
+      - {doc: P1, pages: [ ]}     # fill in after checking the PDF
+    answer: ""                    # fill in
+
+  - id: q02
+    type: none
+    question: "What learning rate was used to train GPT-4?"
+    gold: []
+    answer: "Not in the collection."

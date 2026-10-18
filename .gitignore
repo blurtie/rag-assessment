@@ -1,0 +1,12 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Data: PDFs are downloaded by script, not committed (licenses differ per paper)
+data/raw/
+data/inspect/
+data/index/
+
+# Secrets
+.env

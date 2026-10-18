@@ -1,0 +1,38 @@
+# All tunable settings live here, not in the code.
+# Secrets / machine-specific values (e.g. OLLAMA_HOST) go in .env — see .env.example.
+
+manifest: papers.yaml
+
+paths:
+  raw_dir: data/raw
+  chunks_file: data/index/chunks.jsonl       # ALL chunks, every section kind (for analysis)
+  embeddings_file: data/index/embeddings.npy # only the chunks selected by chunking.index_sections
+  index_meta_file: data/index/index_meta.json
+  outputs_dir: outputs                       # saved runs from `ask --save`
+
+chunking:
+  chunk_tokens: 400      # baseline value, NOT tuned yet
+  overlap_tokens: 80     # so a sentence cut at a boundary still appears whole in one chunk
+  # Which section kinds go into the search index: main | references | appendix
+  # References excluded by default: lists of paper titles match many queries by keyword
+  # but never contain the answer. Revisit with evidence (NOTES: Q1, H1).
+  index_sections: [main, appendix]
+
+embedding:
+  model: BAAI/bge-m3
+  device: cuda           # set to "cpu" if Ollama + embedder do not both fit in VRAM
+  batch_size: 16
+
+retrieval:
+  method: hybrid         # dense | bm25 | hybrid
+  top_k: 5               # chunks passed to the LLM
+  candidate_k: 20        # candidates taken from each retriever before hybrid fusion
+  rrf_k: 60              # Reciprocal Rank Fusion constant (common default from the RRF paper)
+
+generation:
+  provider: ollama
+  model: qwen3:8b        # record the exact digest from `ollama list` in the README
+  temperature: 0.0       # deterministic-ish output, easier to compare runs
+  num_ctx: 8192          # Ollama default is smaller; 5 chunks x 400 tokens + prompt needs more
+  think: false           # disable Qwen3 "thinking" output; set to null for models without that mode
+  timeout_s: 300

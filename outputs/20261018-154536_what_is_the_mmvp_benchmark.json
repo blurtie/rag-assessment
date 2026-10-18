@@ -1,0 +1,124 @@
+{
+  "question": "What is the MMVP benchmark?",
+  "time": "2026-10-18 15:45:07",
+  "llm": "qwen3:8b",
+  "embedding": "BAAI/bge-m3",
+  "mode": "rag",
+  "method": "dense",
+  "retrieved": [
+    {
+      "rank": 1,
+      "chunk": {
+        "text": "665k [1, 15, 21, 23, 24, 31, 34, 35, 38, 49, 51] proposed in Liu et al. [30]. B. MMVP Benchmark We provide more details on the MMVP benchmark. B.1. Details of evaluating SOTA models We access GPT-4V through ChatGPT in October and November 2023. We also evaluate Gemini-Pro through Vertex AI API in December 2023. We use the official checkpoints for InstructBLIP [8]. We access mini-GPT4 [71],1 LLaVA and LLaVA-1.5 [31] through their playgrounds. We test Bard [13] using the official website in September and October 2023. Moreover, we test new-Bing [37] through new-Bing chat creative mode and GPT-4V [40] in September 2023. B.2. Questions in MMVP Benchmark We present more examples in MMVP at the end in Figures 10, 11, 12. B.3. Ablation Studies To further verify that MLLMs make mistakes in MMVP due to their incapable visual grounding instead of hallucination in the language model [20]. We conduct additional ablation experiments on 1To circumvent response hallucination in mini-GPT4 we prefix our questions with “Please only choose an option to answer the question below without explanation: ” LLaVA-1.5 InstructBLIP Bard Gemini GPT-4 Correlation 0.87 0.71 0.79 0.72 0.31 Table 5. Pearson Correlation between the CLIP model and MLLMs. Open-source models that explicitly use CLIP-based models are highlighted in gray. the format and notations of VQA questions and options in MMVP. We choose GPT-4V to do these experiments, as it is currently the best model. Swapping",
+        "pages": [
+          12
+        ],
+        "heading": "A. Experiment Details",
+        "n_tokens": 400,
+        "chunk_id": "P1-a002",
+        "doc_id": "P1",
+        "title": "Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs",
+        "kind": "appendix"
+      },
+      "score": 0.5629161596298218,
+      "dense_rank": 1,
+      "dense_score": 0.5629
+    },
+    {
+      "rank": 2,
+      "chunk": {
+        "text": "Visual Patterns (MMVP) benchmark. MMVP exposes areas where state-of-the-art systems, including GPT-4V, struggle with straightforward questions across nine basic visual patterns, often providing incorrect answers and hallucinated explanations. We further evaluate various CLIP-based vision-and-language models and found a notable correlation between visual patterns that challenge CLIP models and those problematic for multimodal LLMs. As an initial effort to address these issues, we propose a Mixture of Features (MoF) approach, demonstrating that integrating vision self-supervised learning features with MLLMs can significantly enhance their visual grounding capabilities. Together, our research suggests visual representation learning remains an open challenge, and accurate visual grounding is crucial for future successful multimodal systems. arXiv:2401.06209v2 [cs.CV] 25 Apr 2024 1. Introduction Multimodal Large Language Models (MLLMs) [8, 13, 31, 40] have been rapidly developing in recent times. MLLMs integrate images into large language models (LLMs) and leverage the powerful abilities of LLMs [41, 59, 69], showcasing remarkable proficiency in tasks such as image understanding, visual question answering, and instruction following. In particular, the recently released GPT-4V(ision) [40] has pushed performance to an unprecedented level [41, 63]. Beneath the advancements of these models, we find there exists a notable weakness: they still exhibit visual shortcomings, some of which are surprisingly elementary and evident (see Figure 1). We ask: Where do these problems originate? Is it a deficiency in visual modality, language understanding, or their",
+        "pages": [
+          1,
+          2
+        ],
+        "heading": "",
+        "n_tokens": 400,
+        "chunk_id": "P1-m004",
+        "doc_id": "P1",
+        "title": "Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs",
+        "kind": "main"
+      },
+      "score": 0.539504885673523,
+      "dense_rank": 2,
+      "dense_score": 0.5395
+    },
+    {
+      "rank": 3,
+      "chunk": {
+        "text": "chmark Results E.1. Different vision-only backbones Here, we conduct extra experiments to study MoF involving MAE [18] or MoCoV3 [17] instead of DINOv2; See Table 6. In Table 6, we observe that with MAE/MoCov3, there is a consistent improvement in visual grounding ability, as shown in the MMVP and POPE benchmarks. method SSL Model res #tokens MMVP POPE LLaVA1.5 None 3362 576 24.7 85.9 LLaVA1.5 + I-MoF MoCov3 2242 512 26.7 (+2.0) 86.1 LLaVA1.5 + I-MoF MAE 2242 512 27.3 (+2.6) 86.1 LLaVA1.5 + I-MoF DINOv2 2242 512 28.0 (+3.3) 86.3 Table 6. Results of Interleaved MoF with different vision-only SSL model E.2. Scaling up to larger resolution We conduct additional experiments on Interleaved-MoF that further scale up the resolution to 336 and evaluate on more benchmarks. The summarized results in Table 7 reveal that InterleavedMoF achieves comparable performance on most benchmarks while demonstrating improvements in benchmarks focused on visual grounding. We also observe that MMVP are more sensitive to the model’s visual capabilities, underscoring the significance of our benchmark in assessing visual proficiency. method res #tokens MMVP LLVB LLVW MMB VQAT POPE VQAV2 MM-V LLaVA1.5 3362 576 24.7 84.7 70.7 67.7 61.3 85.9 80.0 35.4 LLaVA1.5 + I-MoF 2242 512 28.0 82.7 73.3 61.6 55.3 86.3 77.3 33.5 LLaVA1.5 + I-MoF 3362 11",
+        "pages": [
+          14,
+          15
+        ],
+        "heading": "E. More Benchmark Results",
+        "n_tokens": 400,
+        "chunk_id": "P1-a007",
+        "doc_id": "P1",
+        "title": "Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs",
+        "kind": "appendix"
+      },
+      "score": 0.5271692872047424,
+      "dense_rank": 3,
+      "dense_score": 0.5272
+    },
+    {
+      "rank": 4,
+      "chunk": {
+        "text": "visual encoder. We begin by identifying failure examples that CLIP struggles to encode properly (Section 2). Inspired by Tong et al. [57], we exploit the erroneous agreements in the embedding space. If two visually different images are encoded similarly by CLIP, then at least one of the images is likely ambiguously encoded. We call such a pair of images a CLIP-blind pair. To measure the visual similarity between images, we use a vision-only self-supervised encoder such as DINOv2 [42]. In this context, CLIP-blind pairs are images with similar CLIP embeddings but different DINOv2 embeddings. We discover that these CLIP-blind pairs indeed lead to errors in downstream MLLMs. With these pairs, We introduce the MultiModal Visual Patterns (MMVP) benchmark. This benchmark is specifically designed to inquire about differences in CLIP-blind pairs and evaluate the visual abilities of state-of-the-art MLLMs with straightforward questions. We evaluate a variety of open-source [8, 30, 31, 71] and closed-source models [13, 41] including GPT-4V [40], and conduct a user study to measure human performance. The results show that MLLM models struggle with straightforward visual questions. Most of these models perform below the level of random guessing, with GPT-4V being the exception. Yet, even GPT-4V exhibits a considerable disparity in performance – exceeding 50% – compared to human performance. Having identified a large number of individual failure instances in MLLMs, we continue to study the systematic visual patterns in MMVP which CLIP models struggle (Section 3). We summariz",
+        "pages": [
+          2
+        ],
+        "heading": "1. Introduction",
+        "n_tokens": 400,
+        "chunk_id": "P1-m006",
+        "doc_id": "P1",
+        "title": "Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs",
+        "kind": "main"
+      },
+      "score": 0.5150864720344543,
+      "dense_rank": 4,
+      "dense_score": 0.5151
+    },
+    {
+      "rank": 5,
+      "chunk": {
+        "text": "0.0 66.7 26.7 26.7 66.7 26.7 20.0 33.3 33.3 Table 1. Performance of various CLIP based models on different visual patterns in MMVP-VLM benchmark. Models scaled up in resolution show minimal improvement, whereas a slight advantage is observed when scaling up the network. For each visual pattern, ImageNet-1k Zero-shot accuracy and MMVP average, we use light gray to highlight the best performance. For most of the visual patterns, all CLIP-based methods show struggle, as evident from the scores. We use symbols for visual patterns due to space limit: ☼: Orientation and Direction, Û: Presence of Specific Features, L: State and Condition, : Quantity and Count, ,: Positional and Relational Context, h: Color and Appearance, Ô: Structural and Physical Characteristics, k: Texts, : Viewpoint and Perspective. 0 10 20 30 40 50 60 70 Accuracy CLIP InstructBLIP LLaVA 1.5 Gemini GPT­4 Figure 6. CLIP and MLLM’s performance on visual patterns. If CLIP performs poorly on a visual pattern such as “ ☼orientation”, MLLMs also underperform on the visual pattern. tion between the underperformance of CLIP and MLLMs’ visual incapability? To explore this, we categorize questions from MMVP into these visual patterns summarized and calculate each MLLM’s performance on these patterns. In Figure 6, we plot CLIP’s performance and MLLMs’ performance for each visual pattern. When the CLIP vision encoder underperforms on a certain visual pattern, the MLLM tends to exhibit similar shortcomings. Open-",
+        "pages": [
+          6
+        ],
+        "heading": "3.3. How CLIP’s Errors Affect MLLMs",
+        "n_tokens": 400,
+        "chunk_id": "P1-m021",
+        "doc_id": "P1",
+        "title": "Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs",
+        "kind": "main"
+      },
+      "score": 0.5144374370574951,
+      "dense_rank": 5,
+      "dense_score": 0.5144
+    }
+  ],
+  "content": "The MMVP (MultiModal Visual Patterns) benchmark is a benchmark designed to evaluate the visual abilities of state-of-the-art Multimodal Large Language Models (MLLMs) by inquiring about differences in CLIP-blind pairs, which are pairs of images with similar CLIP embeddings but different DINOv2 embeddings. It exposes areas where these systems struggle with straightforward questions across nine basic visual patterns, often providing incorrect answers and hallucinated explanations [C2].",
+  "seconds": 5.6,
+  "prompt_tokens": 2384,
+  "output_tokens": 93,
+  "user_prompt": "Context passages:\n\n[C1] P1: Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs | p.12 | section: A. Experiment Details | appendix\n665k [1, 15, 21, 23, 24, 31, 34, 35, 38, 49, 51] proposed in Liu et al. [30]. B. MMVP Benchmark We provide more details on the MMVP benchmark. B.1. Details of evaluating SOTA models We access GPT-4V through ChatGPT in October and November 2023. We also evaluate Gemini-Pro through Vertex AI API in December 2023. We use the official checkpoints for InstructBLIP [8]. We access mini-GPT4 [71],1 LLaVA and LLaVA-1.5 [31] through their playgrounds. We test Bard [13] using the official website in September and October 2023. Moreover, we test new-Bing [37] through new-Bing chat creative mode and GPT-4V [40] in September 2023. B.2. Questions in MMVP Benchmark We present more examples in MMVP at the end in Figures 10, 11, 12. B.3. Ablation Studies To further verify that MLLMs make mistakes in MMVP due to their incapable visual grounding instead of hallucination in the language model [20]. We conduct additional ablation experiments on 1To circumvent response hallucination in mini-GPT4 we prefix our questions with “Please only choose an option to answer the question below without explanation: ” LLaVA-1.5 InstructBLIP Bard Gemini GPT-4 Correlation 0.87 0.71 0.79 0.72 0.31 Table 5. Pearson Correlation between the CLIP model and MLLMs. Open-source models that explicitly use CLIP-based models are highlighted in gray. the format and notations of VQA questions and options in MMVP. We choose GPT-4V to do these experiments, as it is currently the best model. Swapping\n\n[C2] P1: Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs | pp.1-2 | section: - | main\nVisual Patterns (MMVP) benchmark. MMVP exposes areas where state-of-the-art systems, including GPT-4V, struggle with straightforward questions across nine basic visual patterns, often providing incorrect answers and hallucinated explanations. We further evaluate various CLIP-based vision-and-language models and found a notable correlation between visual patterns that challenge CLIP models and those problematic for multimodal LLMs. As an initial effort to address these issues, we propose a Mixture of Features (MoF) approach, demonstrating that integrating vision self-supervised learning features with MLLMs can significantly enhance their visual grounding capabilities. Together, our research suggests visual representation learning remains an open challenge, and accurate visual grounding is crucial for future successful multimodal systems. arXiv:2401.06209v2 [cs.CV] 25 Apr 2024 1. Introduction Multimodal Large Language Models (MLLMs) [8, 13, 31, 40] have been rapidly developing in recent times. MLLMs integrate images into large language models (LLMs) and leverage the powerful abilities of LLMs [41, 59, 69], showcasing remarkable proficiency in tasks such as image understanding, visual question answering, and instruction following. In particular, the recently released GPT-4V(ision) [40] has pushed performance to an unprecedented level [41, 63]. Beneath the advancements of these models, we find there exists a notable weakness: they still exhibit visual shortcomings, some of which are surprisingly elementary and evident (see Figure 1). We ask: Where do these problems originate? Is it a deficiency in visual modality, language understanding, or their\n\n[C3] P1: Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs | pp.14-15 | section: E. More Benchmark Results | appendix\nchmark Results E.1. Different vision-only backbones Here, we conduct extra experiments to study MoF involving MAE [18] or MoCoV3 [17] instead of DINOv2; See Table 6. In Table 6, we observe that with MAE/MoCov3, there is a consistent improvement in visual grounding ability, as shown in the MMVP and POPE benchmarks. method SSL Model res #tokens MMVP POPE LLaVA1.5 None 3362 576 24.7 85.9 LLaVA1.5 + I-MoF MoCov3 2242 512 26.7 (+2.0) 86.1 LLaVA1.5 + I-MoF MAE 2242 512 27.3 (+2.6) 86.1 LLaVA1.5 + I-MoF DINOv2 2242 512 28.0 (+3.3) 86.3 Table 6. Results of Interleaved MoF with different vision-only SSL model E.2. Scaling up to larger resolution We conduct additional experiments on Interleaved-MoF that further scale up the resolution to 336 and evaluate on more benchmarks. The summarized results in Table 7 reveal that InterleavedMoF achieves comparable performance on most benchmarks while demonstrating improvements in benchmarks focused on visual grounding. We also observe that MMVP are more sensitive to the model’s visual capabilities, underscoring the significance of our benchmark in assessing visual proficiency. method res #tokens MMVP LLVB LLVW MMB VQAT POPE VQAV2 MM-V LLaVA1.5 3362 576 24.7 84.7 70.7 67.7 61.3 85.9 80.0 35.4 LLaVA1.5 + I-MoF 2242 512 28.0 82.7 73.3 61.6 55.3 86.3 77.3 33.5 LLaVA1.5 + I-MoF 3362 11\n\n[C4] P1: Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs | p.2 | section: 1. Introduction | main\nvisual encoder. We begin by identifying failure examples that CLIP struggles to encode properly (Section 2). Inspired by Tong et al. [57], we exploit the erroneous agreements in the embedding space. If two visually different images are encoded similarly by CLIP, then at least one of the images is likely ambiguously encoded. We call such a pair of images a CLIP-blind pair. To measure the visual similarity between images, we use a vision-only self-supervised encoder such as DINOv2 [42]. In this context, CLIP-blind pairs are images with similar CLIP embeddings but different DINOv2 embeddings. We discover that these CLIP-blind pairs indeed lead to errors in downstream MLLMs. With these pairs, We introduce the MultiModal Visual Patterns (MMVP) benchmark. This benchmark is specifically designed to inquire about differences in CLIP-blind pairs and evaluate the visual abilities of state-of-the-art MLLMs with straightforward questions. We evaluate a variety of open-source [8, 30, 31, 71] and closed-source models [13, 41] including GPT-4V [40], and conduct a user study to measure human performance. The results show that MLLM models struggle with straightforward visual questions. Most of these models perform below the level of random guessing, with GPT-4V being the exception. Yet, even GPT-4V exhibits a considerable disparity in performance – exceeding 50% – compared to human performance. Having identified a large number of individual failure instances in MLLMs, we continue to study the systematic visual patterns in MMVP which CLIP models struggle (Section 3). We summariz\n\n[C5] P1: Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs | p.6 | section: 3.3. How CLIP’s Errors Affect MLLMs | main\n0.0 66.7 26.7 26.7 66.7 26.7 20.0 33.3 33.3 Table 1. Performance of various CLIP based models on different visual patterns in MMVP-VLM benchmark. Models scaled up in resolution show minimal improvement, whereas a slight advantage is observed when scaling up the network. For each visual pattern, ImageNet-1k Zero-shot accuracy and MMVP average, we use light gray to highlight the best performance. For most of the visual patterns, all CLIP-based methods show struggle, as evident from the scores. We use symbols for visual patterns due to space limit: ☼: Orientation and Direction, Û: Presence of Specific Features, L: State and Condition, : Quantity and Count, ,: Positional and Relational Context, h: Color and Appearance, Ô: Structural and Physical Characteristics, k: Texts, : Viewpoint and Perspective. 0 10 20 30 40 50 60 70 Accuracy CLIP InstructBLIP LLaVA 1.5 Gemini GPT­4 Figure 6. CLIP and MLLM’s performance on visual patterns. If CLIP performs poorly on a visual pattern such as “ ☼orientation”, MLLMs also underperform on the visual pattern. tion between the underperformance of CLIP and MLLMs’ visual incapability? To explore this, we categorize questions from MMVP into these visual patterns summarized and calculate each MLLM’s performance on these patterns. In Figure 6, we plot CLIP’s performance and MLLMs’ performance for each visual pattern. When the CLIP vision encoder underperforms on a certain visual pattern, the MLLM tends to exhibit similar shortcomings. Open-\n\nQuestion: What is the MMVP benchmark?",
+  "cited_passages": [
+    2
+  ],
+  "invalid_citations": [],
+  "sources": [
+    {
+      "label": "C2",
+      "chunk_id": "P1-m004",
+      "doc_id": "P1",
+      "title": "Eyes Wide Shut? Exploring the Visual Shortcomings of Multimodal LLMs",
+      "pages": [
+        1,
+        2
+      ],
+      "section": ""
+    }
+  ]
+}
