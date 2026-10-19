@@ -1,0 +1,35 @@
+{
+  "n_questions": 1,
+  "config": {
+    "method": "hybrid",
+    "top_k": 5,
+    "candidate_k": 20,
+    "rrf_k": 60
+  },
+  "summary": {
+    "dense": {
+      "hit@1": 0.0,
+      "hit@3": 0.0,
+      "hit@5": 1.0,
+      "rr": 0.25,
+      "all_gold_docs@5": 1.0,
+      "offdoc_appendix@5": 0.0
+    },
+    "bm25": {
+      "hit@1": 1.0,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "rr": 1.0,
+      "all_gold_docs@5": 1.0,
+      "offdoc_appendix@5": 0.0
+    },
+    "hybrid": {
+      "hit@1": 1.0,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "rr": 1.0,
+      "all_gold_docs@5": 1.0,
+      "offdoc_appendix@5": 0.0
+    }
+  }
+}

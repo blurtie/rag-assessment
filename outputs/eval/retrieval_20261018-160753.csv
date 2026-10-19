@@ -1,0 +1,4 @@
+﻿id,type,method,first_hit_rank,hit@1,hit@3,hit@5,rr,all_gold_docs@5,offdoc_appendix@5,top5
+q01,single,dense,4,0,0,1,0.25,1,0,P1-m028 P1-m029 P4-m029 P1-m004 P4-m028
+q01,single,bm25,1,1,1,1,1.0,1,0,P1-m001 P1-m008 P1-m004 P1-m003 P4-m003
+q01,single,hybrid,1,1,1,1,1.0,1,0,P1-m004 P1-m028 P1-m008 P1-m003 P1-m029
